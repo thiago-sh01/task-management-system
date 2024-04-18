@@ -1,9 +1,16 @@
-const express = require("express");
+const express = ('express');
+const sequelize = '../config/database.js';
 
 const app = express();
 
-app.use(express.json());
+async function testeraConxeao() {
+   try {
+    await sequelize.authenticate();
+    console.log('Conexão com o banco de dados estabelecida com sucesso');
+   } catch (error) {
+    conmsole.log('Erro ao conectar ao banco de dados'(error));
+   }
+}
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
+testeraConxeao();
+
